@@ -1,11 +1,11 @@
 #set ($layout = "default/www/default/layout/default.vm")
 #set ($page_title = $seoPageTitle)
-			
-				<section id="logout">
-					<div class="page-header">
-						<h1>$wording.get("bo.auth.header_title_logout")</h1>
-					</div>
-					<div style="padding-bottom: 50px;">
-						$wording.get("bo.auth.main_content_title_logout")
-					</div>
-				</section>
+
+<section id="logout">
+    <div class="page-header">
+        <h1>$wording.get("bo.auth.header_title_logout")</h1>
+    </div>
+    <div style="padding-bottom: 50px;">
+        $wording.get("bo.auth.main_content_title_logout")
+    </div>
+</section>

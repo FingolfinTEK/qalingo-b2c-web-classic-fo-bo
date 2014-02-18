@@ -1,112 +1,112 @@
 #set ($layout = "default/www/default/layout/default.vm")
 #set ($page_title = $seoPageTitle)
 
-				<section id="product-marketing-edit">
-					<div class="page-header">
-						<div style="float: left;">
-							<h1>${mainContentTitle}</h1>
-						</div>
-						#if($!productMarketing.productDetailsUrl)
-						<div style="float: right; line-height: 40px; margin: 10px 0; font-size: 18px;">
-							Actions: <a href="${productMarketing.productDetailsUrl}">$wording.get("bo.product_marketing.details_url_label")</a>
-						</div>
-						#end
-					</div>
-					<div style="clear: both; width: 100%; text-align: right;">
-						#if($!productMarketing.createdDate)
-						$wording.get("bo.common.date_create_label") : ${productMarketing.createdDate} | 
-						#end
-						#if($!productMarketing.updatedDate)
-						$wording.get("bo.common.date_update_label") : ${productMarketing.updatedDate}
-						#end
-					</div>
-					<div class="form-horizontal well">
-						<form id="productMarketingForm" name="productMarketingForm" action="" method="POST">
-						<input type="hidden" id="id" name="id" value="${productMarketingForm.id}" />
-						#set($beanName = "productMarketingForm")
-						#parse("../../_include/body-form-error-message.vm")
-						<div>
-							<button class="btn" onclick="javascript:window.location.href='$urlBack'">$wording.get("bo.product_marketing.cancel_label")</button>
-							<button class="btn btn-primary" type="submit" style="margin-top: 0px;">$wording.get("bo.product_marketing.submit_label")</button>
-						</div>
-						<div style="clear: both;">
-							<div style="padding-top: 5px; padding-bottom: 5px;">
-								<div style="float: left; width: 100px;">
-									<label for="name" class="label-form">$wording.get("bo.product_marketing.business_name_label")</label>
-								</div>
-								<div style="float: left;">
-									<input type="text" id="name" name="name" value="${productMarketingForm.name}" style="width: 150px; margin-bottom: 0px;" />
-									<br/>
-									$wording.get("bo.product_marketing.business_name_information")
-								</div>
-							</div>
-							<div style="clear: both; padding-top: 5px; padding-bottom: 5px;">
-								<div style="float: left; width: 100px;">
-									<label for="code" class="label-form">$wording.get("bo.product_marketing.code_label")</label>
-								</div>
-								<div style="float: left;">
-									<input type="text" id="code" name="code" value="${productMarketingForm.code}" style="width: 150px; margin-bottom: 0px;" />
-								</div>
-							</div>
-							<div style="clear: both; padding-top: 5px; padding-bottom: 5px;">
-								<div style="float: left; width: 100px;">
-									<label for="description" class="label-form">$wording.get("bo.product_marketing.description_label")</label>
-								</div>
-								<div style="float: left;">
-									<textarea id="description" name="description" cols="40" rows="5" style="width: 400px; height: 150px;">${productMarketingForm.description}</textarea>
-									<br/>
-									$wording.get("bo.product_marketing.description_information")
-								</div>
-							</div>
-							<div style="clear: both; padding-top: 5px; padding-bottom: 5px;">
-							$wording.get("bo.product_marketing.global_attribute_list_label")
-							</div>
-							<div style="clear: both; padding-top: 5px; padding-bottom: 5px;">
-								#set ($map = ${productMarketingForm.globalAttributes} )
-								#foreach ($mapEntry in $map.entrySet())
-								<div style="clear: both; padding-top: 5px; padding-bottom: 5px;">
-									<div style="float: left; width: 400px;">
-										<label for="code" class="label-form">$mapEntry.key</label>
-									</div>
-									<div style="float: left;">
-										<input type="text" id="code" name="globalAttributes['$mapEntry.key']" value="$mapEntry.value" style="width: 150px; margin-bottom: 0px;">
-									</div>
-								</div>
-								#end
-							</div>
-							<div style="clear: both; padding-top: 5px; padding-bottom: 5px;">
-							$wording.get("bo.product_marketing.area_attribute_list_label")
-							</div>
-							<div style="clear: both; padding-top: 5px; padding-bottom: 5px;">
-								#set ($map = ${productMarketingForm.marketAreaAttributes} )
-								#foreach ($mapEntry in $map.entrySet())
-								<div style="clear: both; padding-top: 5px; padding-bottom: 5px;">
-									<div style="float: left; width: 400px;">
-										<label for="code" class="label-form">$mapEntry.key</label>
-									</div>
-									<div style="float: left;">
-										<input type="text" id="code" name="marketAreaAttributes['$mapEntry.key']" value="$mapEntry.value" style="width: 150px; margin-bottom: 0px;">
-									</div>
-								</div>
-								#end
-							</div>
-							#*
-	${productMarketing.descriptionLabel} : ${productMarketing.description}
-	${productMarketing.isDefaultLabel} : ${productMarketing.default}
-	${productMarketing.productBrandLabel} : ${productMarketing.brand.name} (${productMarketing.brand.code})
-	${productMarketing.productMarketingGlobalAttributesLabel} 
-	${productMarketing.productMarketingMarketAreaAttributesLabel} 
-	${productMarketing.productSkusLabel}
-	${productMarketing.productCrossLinksLabel}
-	${productMarketing.assetsLabel} 
-							*#
-						</div>
-						<div style="clear: both; padding-top: 15px;">
-							<button class="btn" onclick="javascript:window.location.href='$urlBack'">$wording.get("bo.product_marketing.cancel_label")</button>
-							<button class="btn btn-primary" type="submit" style="margin-top: 0px;">$wording.get("bo.product_marketing.submit_label")</button>
-						</div>
-						</form>
-					</div>
-				</section>
+<section id="product-marketing-edit">
+    <div class="page-header">
+        <div style="float: left;">
+            <h1>${mainContentTitle}</h1>
+        </div>
+        #if($!productMarketing.productDetailsUrl)
+            <div style="float: right; line-height: 40px; margin: 10px 0; font-size: 18px;">
+                Actions: <a href="${productMarketing.productDetailsUrl}">$wording.get("bo.product_marketing.details_url_label")</a>
+            </div>
+        #end
+    </div>
+    <div style="clear: both; width: 100%; text-align: right;">
+        #if($!productMarketing.createdDate)
+            $wording.get("bo.common.date_create_label") : ${productMarketing.createdDate} |
+        #end
+        #if($!productMarketing.updatedDate)
+            $wording.get("bo.common.date_update_label") : ${productMarketing.updatedDate}
+        #end
+    </div>
+    <div class="form-horizontal well">
+        <form id="productMarketingForm" name="productMarketingForm" action="" method="POST">
+            <input type="hidden" id="id" name="id" value="${productMarketingForm.id}"/>
+            #set($beanName = "productMarketingForm")
+            #parse("../../_include/body-form-error-message.vm")
+            <div>
+                <button class="btn" onclick="javascript:window.location.href='$urlBack'">$wording.get("bo.product_marketing.cancel_label")</button>
+                <button class="btn btn-primary" type="submit" style="margin-top: 0px;">$wording.get("bo.product_marketing.submit_label")</button>
+            </div>
+            <div style="clear: both;">
+                <div style="padding-top: 5px; padding-bottom: 5px;">
+                    <div style="float: left; width: 100px;">
+                        <label for="name" class="label-form">$wording.get("bo.product_marketing.business_name_label")</label>
+                    </div>
+                    <div style="float: left;">
+                        <input type="text" id="name" name="name" value="${productMarketingForm.name}" style="width: 150px; margin-bottom: 0px;"/>
+                        <br/>
+                        $wording.get("bo.product_marketing.business_name_information")
+                    </div>
+                </div>
+                <div style="clear: both; padding-top: 5px; padding-bottom: 5px;">
+                    <div style="float: left; width: 100px;">
+                        <label for="code" class="label-form">$wording.get("bo.product_marketing.code_label")</label>
+                    </div>
+                    <div style="float: left;">
+                        <input type="text" id="code" name="code" value="${productMarketingForm.code}" style="width: 150px; margin-bottom: 0px;"/>
+                    </div>
+                </div>
+                <div style="clear: both; padding-top: 5px; padding-bottom: 5px;">
+                    <div style="float: left; width: 100px;">
+                        <label for="description" class="label-form">$wording.get("bo.product_marketing.description_label")</label>
+                    </div>
+                    <div style="float: left;">
+                        <textarea id="description" name="description" cols="40" rows="5" style="width: 400px; height: 150px;">${productMarketingForm.description}</textarea>
+                        <br/>
+                        $wording.get("bo.product_marketing.description_information")
+                    </div>
+                </div>
+                <div style="clear: both; padding-top: 5px; padding-bottom: 5px;">
+                    $wording.get("bo.product_marketing.global_attribute_list_label")
+                </div>
+                <div style="clear: both; padding-top: 5px; padding-bottom: 5px;">
+                    #set ($map = ${productMarketingForm.globalAttributes} )
+                    #foreach ($mapEntry in $map.entrySet())
+                        <div style="clear: both; padding-top: 5px; padding-bottom: 5px;">
+                            <div style="float: left; width: 400px;">
+                                <label for="code" class="label-form">$mapEntry.key</label>
+                            </div>
+                            <div style="float: left;">
+                                <input type="text" id="code" name="globalAttributes['$mapEntry.key']" value="$mapEntry.value" style="width: 150px; margin-bottom: 0px;">
+                            </div>
+                        </div>
+                    #end
+                </div>
+                <div style="clear: both; padding-top: 5px; padding-bottom: 5px;">
+                    $wording.get("bo.product_marketing.area_attribute_list_label")
+                </div>
+                <div style="clear: both; padding-top: 5px; padding-bottom: 5px;">
+                    #set ($map = ${productMarketingForm.marketAreaAttributes} )
+                    #foreach ($mapEntry in $map.entrySet())
+                        <div style="clear: both; padding-top: 5px; padding-bottom: 5px;">
+                            <div style="float: left; width: 400px;">
+                                <label for="code" class="label-form">$mapEntry.key</label>
+                            </div>
+                            <div style="float: left;">
+                                <input type="text" id="code" name="marketAreaAttributes['$mapEntry.key']" value="$mapEntry.value" style="width: 150px; margin-bottom: 0px;">
+                            </div>
+                        </div>
+                    #end
+                </div>
+            #*
+${productMarketing.descriptionLabel} : ${productMarketing.description}
+${productMarketing.isDefaultLabel} : ${productMarketing.default}
+${productMarketing.productBrandLabel} : ${productMarketing.brand.name} (${productMarketing.brand.code})
+${productMarketing.productMarketingGlobalAttributesLabel}
+${productMarketing.productMarketingMarketAreaAttributesLabel}
+${productMarketing.productSkusLabel}
+${productMarketing.productCrossLinksLabel}
+${productMarketing.assetsLabel}
+            *#
+            </div>
+            <div style="clear: both; padding-top: 15px;">
+                <button class="btn" onclick="javascript:window.location.href='$urlBack'">$wording.get("bo.product_marketing.cancel_label")</button>
+                <button class="btn btn-primary" type="submit" style="margin-top: 0px;">$wording.get("bo.product_marketing.submit_label")</button>
+            </div>
+        </form>
+    </div>
+</section>
 				
 
